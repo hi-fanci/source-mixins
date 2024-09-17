@@ -1,0 +1,15 @@
+$colors: (
+    "primary": #000,
+    "secondary": #000,
+    "light": #000,
+    "dark": #000,
+    "tense": #000,
+    "title": #000,
+    "detail": #000
+);
+
+@each $name, $color in $colors {
+    %c-#{$name} {
+        color: $color !important;
+    }
+}
