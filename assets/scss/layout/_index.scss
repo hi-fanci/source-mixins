@@ -1,4 +1,3 @@
-@import "./container";
-
-@import "./loading";
-@import "./cookie";
+@forward "./container";
+@forward "./loading";
+@forward "./cookie";

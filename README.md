@@ -1,11 +1,14 @@
 ### mặc định
 
 ```css
+html {
+    font-size: 62.5%;
+}
 body {
     font-family: Noto Sans JP, san-serif;
-    color: #000;
     font-weight: 400;
     line-height: 1.6;
+    color: #333;
 }
 ```
 
@@ -16,60 +19,43 @@ cd css
 sass --watch styles.scss:styles.css
 ```
 
-> [!TIP]
-> xem chi tiết ở dưới
-
 <details>
 <summary>Container</summary>
-xem thêm ở /scss/layout/_container.scss
 
 ```css
 .container {
     width: 100%;
-    max-width: 1200px; /* width is 1160px, and padding left, right is 20px */
-    margin: 0 auto;
-    padding: 0 20px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .container_fluid {
-    width: 100%; /* width is full, and padding left, right is 20px */
-    padding: 0 20px;
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 ```
 
 </details>
 <details>
 <summary>Font Family</summary>
-xem thêm ở /scss/global/mixins/fonts/font-family.scss
-
 ```css
 .class-name {
-    @extend %ff-[noto, roboto, poppins, ..., custom];
+    @extend %ff-[noto-sans, roboto, poppins, ..., custom];
 }
 ```
-
-|             extend | css                                              |
-| -----------------: | ------------------------------------------------ |
-|   @extend %ff-noto | font-family: Noto Sans JP, sans-serif !important |
-| @extend %ff-roboto | font-family: Roboto, sans-serif !important       |
-
 </details>
 
 <details>
 <summary>Font Size</summary>
-xem thêm ở scss/global/mixins/fonts/font-size.scss
-
 ```css
 .class-name {
     @extend %fz-[14, 16, 18, ..., custom];
 }
 ```
-
-|         extend | css                                                              |
-| -------------: | ---------------------------------------------------------------- |
-| @extend %fz-14 | font-size: 1.2rem<br>@media min-width (768px): font-size: 1.4rem |
-| @extend %fz-16 | font-size: 1.4rem<br>@media min-width (768px): font-size: 1.6rem |
-| @extend %fz-20 | font-size: 1.6rem<br>@media min-width (768px): font-size: 2rem   |
 
 bảng hạ font
 
@@ -94,8 +80,6 @@ bảng hạ font
 
 <details>
 <summary>Font Weight</summary>
-xem thêm ở scss/global/mixins/fonts/font-weight.scss
-
 ```css
 .class-name {
     @extend %fw-[100, 200, ..., 900];
@@ -112,7 +96,6 @@ xem thêm ở scss/global/mixins/fonts/font-weight.scss
 
 <details>
 <summary>Letter Spacing</summary>
-xem thêm ở scss/global/mixins/letter-spacing.scss
 
 ```css
 .class-name {
@@ -130,44 +113,40 @@ xem thêm ở scss/global/mixins/letter-spacing.scss
 
 <details>
 <summary>Text Align</summary>
-xem thêm ở scss/global/mixins/text.scss
-
 ```css
 .class-name {
-    @extend %txt-[left-center-right];
-    @extend %[md, lg, xl, xxl]-txt-[left, center, right];
+    @extend %txt-[l-c-r];
+    @extend %[md, lg, xl, xxl]-txt-[l, c, r];
 }
 ```
 
-|                 extend | css                                          |
-| ---------------------: | -------------------------------------------- |
-|      @extend %txt-left | text-align: left                             |
-|     @extend %txt-right | text-align: right                            |
-|    @extend %txt-center | text-align: center                           |
-| @extend %md-txt-center | @media min-width (768px): text-align: center |
-|  @extend %lg-txt-right | @media min-width (992px): text-align: right  |
+|              extend | css                                          |
+| ------------------: | -------------------------------------------- |
+|      @extend %txt-l | text-align: left                             |
+| @extend %txt-rigrht | text-align: right                            |
+|      @extend %txt-c | text-align: center                           |
+|   @extend %md-txt-c | @media min-width (768px): text-align: center |
+|   @extend %lg-txt-r | @media min-width (992px): text-align: right  |
 
 </details>
 
 <details>
 <summary>Font Feature Settings</summary>
-xem thêm ở scss/global/mixins/text.scss
 
 ```css
 .class-name {
-    @extend %txt-palt;
+    @extend %txt-p;
 }
 ```
 
-|            extend | css                           |
-| ----------------: | ----------------------------- |
-| @extend %txt-palt | font-feature-settings: "palt" |
+|         extend | css                           |
+| -------------: | ----------------------------- |
+| @extend %txt-p | font-feature-settings: "palt" |
 
 </details>
 
 <details>
-<summary>Tel Phone</summary>
-xem thêm ở scss/global/mixins/text.scss
+<summary>Text Phone Number</summary>
 
 ```css
 .class-name {

@@ -1,5 +1,6 @@
+@use "./../global" as *;
 ::-webkit-scrollbar {
-    width: 9px;
+    width: 10px;
     height: 4px;
 }
 
@@ -14,8 +15,14 @@ html {
 body {
     @extend %fz-16;
     color: #333;
+    font-weight: 400;
     font-family: $f_base;
     -webkit-font-smoothing: antialiased;
+}
+
+img {
+    width: 100%;
+    height: auto;
 }
 
 #wrapper {
